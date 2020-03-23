@@ -744,6 +744,15 @@ export default class Pager<T extends Route> extends React.Component<
       )
   );
 
+  private setRef = (ref: PanGestureHandler) => {
+    let { panRef } = this.props;
+
+    (panRef as React.MutableRefObject<PanGestureHandler>).current = ref;
+    (this.gestureHandlerRef as React.MutableRefObject<
+      PanGestureHandler
+    >).current = ref;
+  };
+
   render() {
     const {
       layout,
@@ -767,7 +776,7 @@ export default class Pager<T extends Route> extends React.Component<
       jumpTo: this.jumpTo,
       render: children => (
         <PanGestureHandler
-          ref={this.gestureHandlerRef}
+          ref={this.setRef}
           simultaneousHandlers={this.state.childPanGestureHandlerRefs}
           waitFor={this.state.childPanGestureHandlerRefs}
           enabled={layout.width !== 0 && swipeEnabled && this.state.enabled}
