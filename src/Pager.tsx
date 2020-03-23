@@ -747,7 +747,7 @@ export default class Pager<T extends Route> extends React.Component<
   private setRef = (ref: PanGestureHandler) => {
     let { panRef } = this.props;
 
-    if (panRef && panRef.current === null) {
+    if (panRef) {
       (panRef as React.MutableRefObject<PanGestureHandler>).current = ref;
     }
 
