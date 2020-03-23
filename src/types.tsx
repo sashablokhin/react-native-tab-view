@@ -1,3 +1,5 @@
+import React from 'react';
+import { PanGestureHandler } from 'react-native-gesture-handler';
 import Animated from 'react-native-reanimated';
 
 export type Route = {
@@ -48,6 +50,7 @@ export type PagerCommonProps = {
   onSwipeStart?: () => void;
   onSwipeEnd?: () => void;
   springVelocityScale?: number;
+  panRef?: React.RefObject<PanGestureHandler>;
   springConfig: {
     damping?: number;
     mass?: number;

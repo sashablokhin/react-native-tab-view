@@ -126,6 +126,7 @@ export default class TabView<T extends Route> extends React.Component<
       gestureHandlerProps,
       springVelocityScale,
       renderPager,
+      panRef,
     } = this.props;
     const { layout } = this.state;
 
@@ -148,6 +149,7 @@ export default class TabView<T extends Route> extends React.Component<
           springVelocityScale,
           removeClippedSubviews,
           gestureHandlerProps,
+          panRef,
           children: ({
             position,
             render,
