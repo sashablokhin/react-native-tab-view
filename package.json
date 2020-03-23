@@ -15,8 +15,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "release": "release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn",
+    "bootstrap": "yarn",
     "prepare": "bob build"
   },
   "publishConfig": {
@@ -81,7 +80,6 @@
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
   },
