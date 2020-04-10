@@ -5,8 +5,12 @@
 # XDE
 .expo/
 
+web-build/
+
 # VSCode
 .vscode/
+.history/
+
 jsconfig.json
 
 # Xcode
