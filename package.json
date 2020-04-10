@@ -71,11 +71,6 @@
     "react-native-gesture-handler": "*",
     "react-native-reanimated": "*"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && yarn typescript"
-    }
-  },
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
