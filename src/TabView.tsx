@@ -79,6 +79,13 @@ export default class TabView<T extends Route> extends React.Component<
     layout: { width: 0, height: 0, ...this.props.initialLayout },
   };
 
+  static getDerivedStateFromProps(props, currentState) {
+    if (props.initialLayout && currentState.layout !== props.initialLayout) {
+      return { layout: props.initialLayout }
+    }
+    return null
+  }
+
   private jumpToIndex = (index: number) => {
     if (index !== this.props.navigationState.index) {
       this.props.onIndexChange(index);
@@ -132,7 +139,7 @@ export default class TabView<T extends Route> extends React.Component<
 
     return (
       <GestureHandlerWrapper
-        onLayout={this.handleLayout}
+        onLayout={this.props.initialLayout ? undefined : this.handleLayout}
         style={[styles.pager, style]}
       >
         {renderPager({
